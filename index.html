@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <centre><h1>Spell Checker</h1></centre> 
+    <style>
+            input[type="button"] {
+            border-radius: 10px;
+            background-color: rgb(44, 141, 221);
+            color: black;
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-size: large;
+        }
+
+        input[type="text"] {
+            text-align: left;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            border: 1px solid black;
+            height: 100%;
+            font-size: large;
+        }
+        table{
+            padding: auto;
+        }
+
+        
+    </style>
+<script src="script.js"></script>
+<script>
+    function readfun(){
+    document.getElementById('myFile') 
+            .addEventListener('change', function() { 
+              
+            var fr=new FileReader(); 
+            fr.onload=function(){ 
+                document.getElementById('area1') 
+                        .textContent=fr.result; 
+            } 
+              
+            fr.readAsText(this.files[0]); 
+        })
+}
+</script>
+</head>
+<body>
+    
+    <p>Click on the "Choose File" button to upload a file:</p>
+    <form class="form-inline">
+        <input type="file" id="myFile" class="form-control"  placeholder="Email Address">
+        <button type="button" class="btn btn-danger" onclick="readfun()">Upload</button>
+      </form>
+    
+    <textarea id="area1"  rows="10" cols="70"></textarea>
+    </div>
+</body>
+</html>
