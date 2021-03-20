@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -28,31 +29,17 @@
 
         
     </style>
-<script src="script.js"></script>
-<script>
-    function readfun(){
-    document.getElementById('myFile') 
-            .addEventListener('change', function() { 
-              
-            var fr=new FileReader(); 
-            fr.onload=function(){ 
-                document.getElementById('area1') 
-                        .textContent=fr.result; 
-            } 
-              
-            fr.readAsText(this.files[0]); 
-        })
-}
-</script>
+        <script src="script.js"></script>
+
 </head>
 <body>
     
     <p>Click on the "Choose File" button to upload a file:</p>
     <form class="form-inline">
-        <input type="file" id="myFile" class="form-control"  placeholder="Email Address">
-        <button type="button" class="btn btn-danger" onclick="readfun()">Upload</button>
+        <input type="file"  onchange="readFile(this)" class="form-control" >
+        <button type="button"  class="btn btn-danger" onclick="readfun(myFile)">Upload</button>
       </form>
-    
+    <br>
     <textarea id="area1"  rows="10" cols="70"></textarea>
     </div>
 </body>
