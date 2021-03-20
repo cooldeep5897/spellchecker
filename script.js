@@ -1,15 +1,20 @@
 
+ 
    function upload(){ 
-        let inputText= document.getElementById('container').textContent;
+    try{ let inputText= document.getElementById('container').textContent;
         console.log(inputText);
         let url = "https://api.textgears.com/spelling?key=1gVny1rfj02gy7kY&text="+inputText+"&language=en-GB";
         let req = new XMLHttpRequest();
         req.open("POST",url);
         req.send();
         req.onload = ()=>{
-            let parsedResponse1 = JSON.parse(req.response);
+            let obj= JSON.parse(req.response);
             console.log(req.response);
+            console.log(obj['errors']);
         }
+    }catch(err){
+        console.error(err);
+    }
     }
 
 function readFile(input) {
