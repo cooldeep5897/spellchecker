@@ -1,14 +1,15 @@
+
    function upload(){ 
-        var inputText=document.getElementById('container').value;
-        let url1 = "https://api.textgears.com/spelling?key=1gVny1rfj02gy7kY&text="+inputText+"&language=en-GB";
-        let req1 = new XMLHttpRequest();
-        req1.open("GET",url1);
-        req1.send();
-        req1.onload = ()=>{
-            let parsedResponse1 = JSON.parse(req1.response);
-            console.log(parsedResponse1.response.errors);
-        }
+        let inputText= document.getElementById('container').textContent;
         console.log(inputText);
+        let url = "https://api.textgears.com/spelling?key=1gVny1rfj02gy7kY&text="+inputText+"&language=en-GB";
+        let req = new XMLHttpRequest();
+        req.open("POST",url);
+        req.send();
+        req.onload = ()=>{
+            let parsedResponse1 = JSON.parse(req.response);
+            console.log(req.response);
+        }
     }
 
 function readFile(input) {
@@ -26,5 +27,5 @@ function readFile(input) {
     reader.onerror = function() {
       console.log(reader.error);
     };
-  
+   
   }
