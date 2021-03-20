@@ -1,13 +1,16 @@
-function readfun(){
-    document.getElementById('myFile') 
-            .addEventListener('change', function() { 
-              
-            var fr=new FileReader(); 
-            fr.onload=function(){ 
-                document.getElementById('area1') 
-                        .textContent=fr.result; 
-            } 
-              
-            fr.readAsText(this.files[0]); 
-        })
-}
+function readFile(input) {
+    let file = input.files[0];
+  
+    let reader = new FileReader();
+  
+    reader.readAsText(file);
+  
+    reader.onload = function() {
+      document.getElementById('area1').value=reader.result;
+    };
+  
+    reader.onerror = function() {
+      console.log(reader.error);
+    };
+  
+  }
