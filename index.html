@@ -37,10 +37,14 @@
     <p>Click on the "Choose File" button to upload a file:</p>
     <form class="form-inline">
         <input type="file"  onchange="readFile(this)" class="form-control" >
-        <button type="button"  class="btn btn-danger" onclick="readfun(myFile)">Upload</button>
+        <button type="button"  id="sendrequest" class="btn btn-danger" onclick="upload()">Upload</button>
       </form>
     <br>
-    <textarea id="area1"  rows="10" cols="70"></textarea>
+    <div id='container'>
+    	<p>
+        	Content inside p element.
+        </p>
+    </div>
     </div>
 </body>
 </html>
