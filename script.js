@@ -1,6 +1,5 @@
 
- 
-   function upload(){ 
+    function upload(){ 
     try{ let inputText= document.getElementById('container').textContent;
         console.log(inputText);
         let url = "https://api.textgears.com/spelling?key=1gVny1rfj02gy7kY&text="+inputText+"&language=en-GB";
@@ -10,10 +9,11 @@
         req.onload = ()=>{
             let obj= JSON.parse(req.response);
             console.log(req.response);
-            console.log(obj['errors']);
+            let l1=obj['errors'][1]['length'];
+            console.log(l1);
         }
     }catch(err){
-        console.error(err);
+        console.error();
     }
     }
 
