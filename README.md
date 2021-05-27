@@ -1,4 +1,8 @@
 # spellchecker
-used for checking spelling mistakes in a text file and then gives suggestions to correct those spellings.Enjoy!!!
-Link-https://spellchckr.herokuapp.com/
+Spell Checker is an app designed for making texts, notes, essays, etc spelling mistakes free.
+User can simply paste a text or upload a text file to check spelling mistakes.
+The app will not only find the mistakes but also give suggestions for the mistakes.
+By choosing a suggestion from the list of suggestions the spelling will get corrected in the text.
+
+Demo Link-https://spellchckr.herokuapp.com/
 
